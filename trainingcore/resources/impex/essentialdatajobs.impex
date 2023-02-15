@@ -1,0 +1,7 @@
+$siteUid=apparel-uk
+INSERT_UPDATE ProductsRemovalCronJob; code[unique=true];job(code);xDaysOld;sessionLanguage(isocode);sessionCurrency(isocode)
+                     ;productsRemovalCronJob;productsRemovalJob;5;en;EUR
+
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];active;cronExpression
+#Fires at 10:15 AM everyday
+                     ;productsRemovalCronJob;true;0 15 10 * * ?

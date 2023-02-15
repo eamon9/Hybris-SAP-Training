@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+		xmlns:na="http://www.hybris.com/cockpitng/config/notifications"
+		xmlns:y="http://www.hybris.com/cockpit/config/hybris"
+		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+		xmlns:t="http://www.hybris.com/cockpitng/config/explorertree">
+
+	<context merge-by="module" component="editorareaactions" type="Consignment">
+		<y:actions xmlns:y="http://www.hybris.com/cockpit/config/hybris">
+			<y:group qualifier="common">
+				<y:label>actiongroup.common</y:label>				
+				<y:action action-id="de.hybris.training.backoffice.actions.confirmpickupaction" property="currentObject"/>				
+			</y:group>
+		</y:actions>
+    </context>
+
+	<!-- Notification Area-->
+	<context component="notification-area">
+	    <na:notification-area>	        
+	        <na:notifications eventType="trainingbackoffice.confirmpickup.event" level="SUCCESS">
+	            <na:message>hmc.action.confirmpickup.success</na:message>
+	        </na:notifications>
+	   </na:notification-area>
+	</context>
+
+	<!-- Trying to add Inter under User tree-nodes -->
+
+	<context component="explorer-tree" merge-by="module">
+		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+			<n:navigation-node id="User">
+				<n:type-node id="Intern" code="Intern"/>
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+
+	<context type="Intern" component="listview">
+		<list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+			<list:column qualifier="intern_firstName"/>
+			<list:column qualifier="intern_lastName"/>
+			<list:column qualifier="intern_collegeName"/>
+			<list:column qualifier="intern_monthAtOrganization"/>
+		</list:list-view>
+	</context>
+
+	<!--
+	<context component="explorer-tree">
+		<explorer-tree:explorer-tree>
+			<explorer-tree:navigation-node id="User">
+				<explorer-tree:type-node code="Intern" id="User"/>
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
+
+	<context component="explorer-tree">
+		<t:explorer-tree>
+			<t:navigation-node id="User">
+				<t:type-node code="MyIntern" id="User"/>
+			</t:navigation-node>
+		</t:explorer-tree>
+	</context>
+	-->
+
+	<!--
+	<context component="explorer-tree" merge-by="module">
+		<n:explorer-tree>
+			<n:navigation-node id="MyCustomIntern">
+				<n:type-node code="Employee" id="Intern"/>
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+	-->
+<!--
+	<context component="explorer-tree" merge-by="module" parent="User">
+		<n:explorer-tree>
+			<n:navigation-node id="hmc_treenode_user">
+				<n:type-node code="Intern" id="hmc_typenode_intern"/>
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+-->
+
+	<!--
+	<et:navigation-node id="hmc_treenode_user">
+		<et:type-node code="company" id="hmc_typenode_company"/>
+		<et:type-node code="UserGroup" id="hmc_typenode_usergroup"/>
+		<et:type-node code="Employee" id="hmc_typenode_employee"/>
+		<et:type-node code="Customer" id="hmc_typenode_customer"/>
+		<et:type-node code="Address" id="hmc_typenode_address"/>
+		<et:type-node code="Title" id="hmc_typenode_title"/>
+		<et:type-node code="agreement" id="hmc_typenode_agreement"/>
+	</et:navigation-node>
+	-->
+
+</config>
