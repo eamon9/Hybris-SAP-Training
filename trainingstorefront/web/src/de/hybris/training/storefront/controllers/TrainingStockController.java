@@ -25,27 +25,6 @@ public class TrainingStockController {
             products.add(data.getDescription() + ":" + data.getName());
         }
         model.addAttribute("products", products);
-        return "pages/error/lowStockSKU";
+        return "pages/stockData/lowStockSKU";
     }
 }
-
-
-/*@Controller
-public class TrainingController {
-    @Autowired
-    SkuFacade facade;
-
-    @RequestMapping(value = "/lowStockSKU")
-    public String showBands(final Model model)
-    {
-        List<TrainingSkuData> dataList = facade.getSkuData();
-        model.addAttribute("SKU", dataList.size());
-        List<String> products = new ArrayList<String>();
-        for(TrainingSkuData data: dataList) {
-            products.add(data.getDescription() + ":" + data.getName());
-        }
-        model.addAttribute("products", products);
-        return "pages/error/lowStockSKU";
-    }
-
-}*/
