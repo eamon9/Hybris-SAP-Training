@@ -7,9 +7,15 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
-<link rel="stylesheet" href="styles.css">
-
 <html>
+<style>
+    body {
+        background-color: #e0dbdb;
+        font-family: "Arial Black", Helvetica, sans-serif;
+        /*font-size: 16em;*/
+        color: #000000;
+    }
+</style>
 <title>Low Stock SKU</title>
 <body>
 <h3>
