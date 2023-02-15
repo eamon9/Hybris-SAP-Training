@@ -612,7 +612,8 @@
 	<bean id="findOldCartsDao" class="de.hybris.training.core.daos.impl.FindOldCartsDaoImpl"/>
 
 	<!-- SKU Beans Task day 5-->
-	<bean id = "skuService" class="de.hybris.training.core.product.impl.MyProductServiceImpl">
+	<bean id = "skuService"
+		  class="de.hybris.training.core.product.impl.MyProductServiceImpl">
 		<property name="productDao" ref="myProductDao"/>
 	</bean>
 

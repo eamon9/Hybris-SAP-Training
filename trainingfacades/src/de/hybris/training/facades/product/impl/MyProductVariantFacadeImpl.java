@@ -5,13 +5,11 @@ import de.hybris.training.core.product.MyProductService;
 import de.hybris.training.facades.product.MyProductVariantFacade;
 import de.hybris.training.facades.product.data.TrainingSkuData;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyProductVariantFacadeImpl implements MyProductVariantFacade {
 
-    @Resource
     private MyProductService productService;
 
     @Override

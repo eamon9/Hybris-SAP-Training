@@ -4,12 +4,10 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.training.core.daos.MyProductDao;
 import de.hybris.training.core.product.MyProductService;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 public class MyProductServiceImpl implements MyProductService {
 
-    @Resource
     private MyProductDao productDao;
 
 
