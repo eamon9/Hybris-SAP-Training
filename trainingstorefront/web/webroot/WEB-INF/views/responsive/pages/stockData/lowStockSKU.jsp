@@ -24,7 +24,7 @@
 </h3>
 <h1>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    ${SKU}
+    ${listSize}
 </h1>
 <h2>*** lowStockSKU ***</h2>
 <h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
