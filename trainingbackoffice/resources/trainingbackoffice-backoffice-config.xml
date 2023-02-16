@@ -6,7 +6,8 @@
 		xmlns:na="http://www.hybris.com/cockpitng/config/notifications"
 		xmlns:y="http://www.hybris.com/cockpit/config/hybris"
 		xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
-		xmlns:t="http://www.hybris.com/cockpitng/config/explorertree">
+		xmlns:t="http://www.hybris.com/cockpitng/config/explorertree"
+		xmlns:list="http://www.hybris.com/cockpitng/component/listView">
 
 	<context merge-by="module" component="editorareaactions" type="Consignment">
 		<y:actions xmlns:y="http://www.hybris.com/cockpit/config/hybris">
@@ -31,17 +32,17 @@
 	<context component="explorer-tree" merge-by="module">
 		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
 			<n:navigation-node id="User">
-				<n:type-node id="Intern" code="Intern"/>
+				<n:type-node id="Intern" code="Interns"/>
 			</n:navigation-node>
 		</n:explorer-tree>
 	</context>
 
-	<context type="Intern" component="listview">
-		<list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
-			<list:column qualifier="intern_firstName"/>
-			<list:column qualifier="intern_lastName"/>
-			<list:column qualifier="intern_collegeName"/>
-			<list:column qualifier="intern_monthAtOrganization"/>
+	<context type="Interns" component="listview">
+		<list:list-view>
+			<list:column qualifier="favoritJobPlace"/>
+			<list:column qualifier="collegeName"/>
+			<list:column qualifier="monthAtOrganization"/>
+			<list:column qualifier="laptopType"/>
 		</list:list-view>
 	</context>
 

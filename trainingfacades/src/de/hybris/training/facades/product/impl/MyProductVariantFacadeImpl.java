@@ -6,6 +6,7 @@ import de.hybris.training.facades.product.MyProductVariantFacade;
 import de.hybris.training.facades.product.data.TrainingSkuData;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MyProductVariantFacadeImpl implements MyProductVariantFacade {
@@ -17,9 +18,12 @@ public class MyProductVariantFacadeImpl implements MyProductVariantFacade {
         List<ProductModel> productModelList = productService.getProducts();
         TrainingSkuData data = new TrainingSkuData();
         List<TrainingSkuData> dataList = new ArrayList<>();
-        for (ProductModel productModel : productModelList) {
-            data.setDescription(productModel.getCode());
+        for (int i = 0; i < productModelList.size(); i++) {
+            ProductModel productModel = productModelList.get(i);
+            data.setDescription(productModel.getDescription());
             data.setName(productModel.getName());
+            data.setStatus(String.valueOf(productModel.getApprovalStatus()));
+            data.setWarehouses(Collections.singletonList(productModel.getUnitOfMeasure()));
             dataList.add(data);
         }
         return dataList;
@@ -28,14 +32,4 @@ public class MyProductVariantFacadeImpl implements MyProductVariantFacade {
     public void setProductService(final MyProductService productService) {
         this.productService = productService;
     }
-
-    /*@Override
-    protected  MyProductService getProductService() {
-        return productService;
-    }
-
-    @Override
-    public List getTrainingSkuData() {
-        return null;
-    }*/
 }

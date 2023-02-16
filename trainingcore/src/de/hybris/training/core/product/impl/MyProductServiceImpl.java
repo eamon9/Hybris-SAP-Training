@@ -20,20 +20,4 @@ public class MyProductServiceImpl implements MyProductService {
         this.productDao = productDao;
     }
 
-    /*@Override
-    protected MyProductDao getProductDao() {
-        return productDao;
-    }*/
-
-    /*@Override
-    public List getTrainingSkuData(Product sku) {
-        validateParameterNotNull(sku, "sku ,cannot be null");
-        return getProductDao().findTrainingSkuData(sku);
-    }*/
-
-    /*@Override
-    public List gettrainingSkuData(Product sku) {
-        validateParameterNotNull(sku, "sku ,cannot be null");
-        return getProductDao().findTrainingSkuData(sku);
-    }*/
 }

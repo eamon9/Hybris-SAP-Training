@@ -17,23 +17,13 @@ public class DefaultMyProductDao extends AbstractItemDao implements MyProductDao
     @Override
     public List<ProductModel> getProducts() {
 
-        final String queryString = "SELECT {p.PK} FROM {Product AS p}";
+        //final String string = "SELECT {p.PK} FROM {Product AS p}";
 
-        /*final String queryString = //
-                "SELECT {" + ProductModel.PK + "}, {" + ProductModel.CODE + "},{" + ProductModel.NAME + "[de]}" //
-                        + "FROM {" + ProductModel._TYPECODE + "} ";*/
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+        final String string = "SELECT {p.PK} FROM {Product AS p} WHERE" +
+                " EXISTS ({{SELECT * FROM {StockLevel as s} WHERE" +
+                " {s.productCode} = {p.code} AND {s.available} < '5' }})";
+
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(string);
         return flexibleSearchService.<ProductModel> search(query).getResult();
     }
-
-    /*private static final Logger LOG = Logger.getLogger(DefaultMyProductDao.class);
-
-    public DefaultMyProductDao(String typecode) {
-        super(typecode);
-    }
-
-    @Override
-    public List findTrainingSkuData(Product sku) {
-        return null;
-    }*/
 }

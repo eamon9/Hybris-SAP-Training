@@ -20,15 +20,15 @@ public class TrainingStockController {
 
         List<TrainingSkuData> dataList = myProductFacade.getSkuData();
         model.addAttribute("listSize", dataList.size());
-        System.out.println("model insight: " + model);
+        //System.out.println("model insight: " + model);
         List<String> products = new ArrayList<String>();
-        System.out.println("products array: " + products);
+        //System.out.println("products array: " + products);
         TrainingSkuData data;
         for (int i = 0; i < dataList.size(); i++) {
             data = dataList.get(i);
             products.add(data.getDescription() + " : " + data.getName());
         }
-        System.out.println("After for-loop");
+        //System.out.println("After for-loop");
         model.addAttribute("products", products);
         return "pages/stockData/lowStockSKU";
     }
