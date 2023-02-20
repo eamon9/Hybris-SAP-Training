@@ -32,20 +32,28 @@ import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.quote.data.QuoteData;
+import de.hybris.platform.commercefacades.user.UserFacade;
 import de.hybris.platform.commercefacades.voucher.VoucherFacade;
 import de.hybris.platform.commercefacades.voucher.exceptions.VoucherOperationException;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.commerceservices.order.CommerceSaveCartException;
 import de.hybris.platform.commerceservices.security.BruteForceAttackHandler;
 import de.hybris.platform.core.enums.QuoteState;
+import de.hybris.platform.core.model.order.CartModel;
 import de.hybris.platform.enumeration.EnumerationService;
+import de.hybris.platform.order.CartService;
+import de.hybris.platform.servicelayer.event.events.AbstractEvent;
+import de.hybris.platform.servicelayer.event.impl.DefaultEventService;
 import de.hybris.platform.site.BaseSiteService;
 import de.hybris.platform.util.Config;
+import de.hybris.training.core.event.TrainingEmailEvent;
 import de.hybris.training.storefront.controllers.ControllerConstants;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -58,6 +66,9 @@ import javax.validation.Valid;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.Hours;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StreamUtils;
@@ -94,6 +105,27 @@ public class CartPageController extends AbstractCartPageController
 
 	private static final Logger LOG = Logger.getLogger(CartPageController.class);
 
+	private CartService cartService;
+
+	private UserFacade userFacade;
+
+	@Required
+	public void setUserFacade(final UserFacade userFacade) {
+		this.userFacade = userFacade;
+	}
+
+	protected CartService getCartService()
+	{
+		return cartService;
+	}
+
+	@Required
+	public void setCartService(final CartService cartService)
+	{
+		this.cartService = cartService;
+	}
+
+
 	@Resource(name = "simpleBreadcrumbBuilder")
 	private ResourceBreadcrumbBuilder resourceBreadcrumbBuilder;
 
@@ -124,6 +156,11 @@ public class CartPageController extends AbstractCartPageController
 	@Resource(name = "bruteForceAttackHandler")
 	private BruteForceAttackHandler bruteForceAttackHandler;
 
+	/*@Resource(name = "userFacade")
+	private UserFacade userFacade;*/
+	@Autowired
+	private DefaultEventService eventService;
+
 	@ModelAttribute("showCheckoutStrategies")
 	public boolean isCheckoutStrategyVisible()
 	{
@@ -133,7 +170,23 @@ public class CartPageController extends AbstractCartPageController
 	@RequestMapping(method = RequestMethod.GET)
 	public String showCart(final Model model) throws CMSItemNotFoundException
 	{
+		if(!userFacade().isAnonymousUser()) {
+			CartModel cartModel = getCartService().getSessionCart();
+			if(cartModel.getTotalPrice() >= Double.valueOf(300.0)) {
+				eventService.publishEvent(initializeEvent(new TrainingEmailEvent(cartModel, cartModel.getStore(),
+						cartModel.getSite(), cartModel.getCurrency()), cartModel));
+			}
+		}
 		return prepareCartUrl(model);
+	}
+
+	private UserFacade userFacade() {
+		return userFacade;
+	}
+
+	private AbstractEvent initializeEvent(TrainingEmailEvent trainingEmailEvent, CartModel cartModel) {
+		trainingEmailEvent.setCart(cartModel);
+		return trainingEmailEvent;
 	}
 
 	protected String prepareCartUrl(final Model model) throws CMSItemNotFoundException

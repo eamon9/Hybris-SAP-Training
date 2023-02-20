@@ -188,4 +188,10 @@
 		<property name="productService" ref="skuService"/>
 	</bean>
 
+	<!-- Training Email Context -->
+	<bean id="trainingEmailContext" class="de.hybris.training.facades.process.email.context.TrainingEmailContext"
+		  parent="abstractEmailContext" scope="prototype" >
+
+	</bean>
+
 </beans>

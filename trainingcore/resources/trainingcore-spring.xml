@@ -623,4 +623,24 @@
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
 
+	<!-- Email Process -->
+	<bean id="trainingEmailProcessDefinitionResource"
+		  class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/trainingcore/processes/trainingEmailProcess.xml"/>
+	</bean>
+
+	<bean id="generateTrainingEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="TrainingEmailTemplate" />
+	</bean>
+
+	<!-- Abandoned Cart Email Process -->
+	<bean id="abandonedCartEmailProcessDefinationResource"
+		  class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/trainingcore/processes/abandonedCartEmailProcess.xml"/>
+	</bean>
+
+	<bean id="generateAbandonedCartEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="AbandonedCartEmailTemplate" />
+	</bean>
+
 </beans>

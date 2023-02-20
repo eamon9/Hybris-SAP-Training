@@ -39,10 +39,11 @@
 
 	<context type="Interns" component="listview">
 		<list:list-view>
-			<list:column qualifier="favoritJobPlace"/>
+			<list:column qualifier="name"/>
 			<list:column qualifier="collegeName"/>
 			<list:column qualifier="monthAtOrganization"/>
 			<list:column qualifier="laptopType"/>
+			<list:column qualifier="favoritJobPlace"/>
 		</list:list-view>
 	</context>
 
