@@ -207,9 +207,35 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
+
+            <!-- Email Process -->
+            <itemtype code="TrainingEmailProcess" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.custom.TrainingEmailProcess"
+                      extends="StoreFrontCustomerProcess">
+                <attributes>
+                    <attribute qualifier="cart" type="AbstractOrder" >
+                        <description> Bla bla bla for Premium Membership </description>
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <!-- Abandoned Cart Email Process -->
+            <itemtype code="AbandonedEmailProcess" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.custom.AbandonedEmailProcess"
+                      extends="StoreFrontCustomerProcess">
+                <attributes>
+                    <attribute qualifier="cart" type="AbstractOrder" >
+                        <description> Abandoned cart Email excersise </description>
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
         </typegroup>
 
 <!-- Intern and Customer-->
+
 
     </itemtypes>
 </items>

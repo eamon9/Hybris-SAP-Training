@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 16. febr. 11:56:26               ---
+ * --- Generated at 2023. gada 20. febr. 09:43:29               ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
@@ -26,6 +26,8 @@ import de.hybris.training.core.jalo.Interns;
 import de.hybris.training.core.jalo.MyFirstCustomer;
 import de.hybris.training.core.jalo.TrainingOldCartRemovalJob;
 import de.hybris.training.core.jalo.UnapprovedProductListCronJob;
+import de.hybris.training.core.jalo.custom.AbandonedEmailProcess;
+import de.hybris.training.core.jalo.custom.TrainingEmailProcess;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,6 +53,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public AbandonedEmailProcess createAbandonedEmailProcess(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.ABANDONEDEMAILPROCESS );
+			return (AbandonedEmailProcess)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating AbandonedEmailProcess : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public AbandonedEmailProcess createAbandonedEmailProcess(final Map attributeValues)
+	{
+		return createAbandonedEmailProcess( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ApparelProduct createApparelProduct(final SessionContext ctx, final Map attributeValues)
@@ -233,6 +261,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ProductsRemovalCronJob createProductsRemovalCronJob(final Map attributeValues)
 	{
 		return createProductsRemovalCronJob( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public TrainingEmailProcess createTrainingEmailProcess(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.TRAININGEMAILPROCESS );
+			return (TrainingEmailProcess)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TrainingEmailProcess : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public TrainingEmailProcess createTrainingEmailProcess(final Map attributeValues)
+	{
+		return createTrainingEmailProcess( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public TrainingOldCartRemovalJob createTrainingOldCartRemovalJob(final SessionContext ctx, final Map attributeValues)
