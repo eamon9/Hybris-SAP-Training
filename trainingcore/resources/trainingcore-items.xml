@@ -236,7 +236,14 @@
             <itemtype code="AbandonedCartEmailCronJob" extends="CronJob" autocreate="true" generate="true"
                       jaloclass="de.hybris.training.core.jalo.AbandonedCartEmailCronJob">
             </itemtype>
+
+            <!-- Get Order Detail Cron Job -->
+            <itemtype code="GetOrderDetailsCronJob" extends="CronJob" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.GetOrderDetailsCronJob">
+            </itemtype>
+
         </typegroup>
+
 
 <!-- Intern and Customer-->
 

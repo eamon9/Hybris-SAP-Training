@@ -655,4 +655,15 @@
 		  parent="defaultProductDao">
 	</bean>
 
+	<!-- Get Order Details Job -->
+	<bean id="getOrdersDetailJob"
+		  class="de.hybris.training.core.job.GetOrderDetailsJob"
+		  parent="abstractJobPerformable" />
+
+	<bean id="testOrderService" class="de.hybris.training.core.service.impl.TestOrderServiceImpl">
+	</bean>
+
+	<bean id="testOrderDAO" class="de.hybris.training.core.dao.impl.TestOrderDAOImpl">
+	</bean>
+
 </beans>

@@ -18,7 +18,6 @@ public class AbandonedCartEmailListResultsDaoImpl extends DefaultProductDao impl
     @Override
     public SearchResult<CartModel> findProductsInCart() {
 
-        //need to change search query
         final String string = "SELECT {PK} FROM { Cart as c} WHERE {c.creationtime} < SYSDATE - INTERVAL '1' HOUR";
 
         final FlexibleSearchQuery query = new FlexibleSearchQuery(string);
