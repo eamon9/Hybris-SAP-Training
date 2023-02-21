@@ -1,5 +1,6 @@
 package de.hybris.training.core.job;
 
+import de.hybris.platform.core.model.order.CartModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.cronjob.enums.CronJobResult;
 import de.hybris.platform.cronjob.enums.CronJobStatus;
@@ -22,7 +23,7 @@ public class AbandonedCartEmailJobPerformable extends AbstractJobPerformable<Cro
     @Override
     public PerformResult perform(final CronJobModel cronJob) {
 
-        final SearchResult<ProductModel> searchResult = abandonedCartEmailListResultDao.findProductsInCart();
+        final SearchResult<CartModel> searchResult = abandonedCartEmailListResultDao.findProductsInCart();
 
         //LOG.info("\n*** Send email to Customer with products in Cart ***");
         LOG.info("\n*** Print products in Cart ***");
@@ -32,13 +33,13 @@ public class AbandonedCartEmailJobPerformable extends AbstractJobPerformable<Cro
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
 
-    protected void printProductCodes(final ProductModel productModel) {
+    protected void printProductCodes(final CartModel cartModel) {
 
-        LOG.info("\nP. Code: " + productModel.getCode() + "\nP. Name: " + productModel.getName() +
-                "\nP. Status: " + productModel.getApprovalStatus() + "\nP. Unit: " + productModel.getUnit() +
-                "\nP. Supercategory: " + productModel.getSupercategories() + "\nP. StockLevel: " + productModel.getStockLevels() +
-                "\nP. UnitOfMeasure: " + productModel.getUnitOfMeasure() + "\nP. XML_Content: " + productModel.getXmlcontent() +
-                "\nP. CatalogVersion: " + productModel.getCatalogVersion() + "\nP. OrderLimit: " + productModel.getProductOrderLimit() +
-                "\nP. CreationTime: " + productModel.getCreationtime() + "\nP. Description: " + productModel.getDescription());
+        LOG.info("\nP. Code: " + cartModel.getCode() + "\nP. Name: " + cartModel.getName() +
+                "\nP. Store: " + cartModel.getStore() + "\nP. Unit: " + cartModel.getUnit() +
+                "\nP. TotalPrice: " + cartModel.getTotalPrice() + "\nP. CreationTime: " + cartModel.getCreationtime() +
+                "\nP. Currency: " + cartModel.getCurrency() + "\nP. SessionID: " + cartModel.getSessionId() +
+                "\nP. Owner: " + cartModel.getOwner() + "\nP. User: " + cartModel.getUser() +
+                "\nP. CreationTime: " + cartModel.getCreationtime() + "\nP. Description: " + cartModel.getDescription());
     }
 }
