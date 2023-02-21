@@ -643,4 +643,16 @@
 		<property name="frontendTemplateName" value="AbandonedCartEmailTemplate" />
 	</bean>
 
+	<!-- AbandonedCartEmail print Products at LOG -->
+	<bean id="abandonedCartEmailJobPerformable"
+		  class="de.hybris.training.core.job.AbandonedCartEmailJobPerformable"
+		  parent="abstractJobPerformable">
+	</bean>
+
+	<alias name="abandonedCartProductDao" alias="productDao"/>
+	<bean id="abandonedCartProductDao"
+		  class="de.hybris.training.core.daos.impl.AbandonedCartEmailListResultsDaoImpl"
+		  parent="defaultProductDao">
+	</bean>
+
 </beans>
