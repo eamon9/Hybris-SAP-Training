@@ -15,10 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Generated class for type {@link de.hybris.training.core.jalo.UnapprovedProductListCronJob UnapprovedProductListCronJob}.
+ * Generated class for type {@link de.hybris.training.core.jalo.AbandonedCartEmailCronJob AbandonedCartEmailCronJob}.
  */
 @SuppressWarnings({"deprecation","unused","cast"})
-public abstract class GeneratedUnapprovedProductListCronJob extends CronJob
+public abstract class GeneratedAbandonedCartEmailCronJob extends CronJob
 {
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static

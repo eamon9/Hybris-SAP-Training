@@ -18,7 +18,7 @@ public class AbandonedCartEmailListResultsDaoImpl extends DefaultProductDao impl
     public SearchResult<ProductModel> findProductsInCart() {
 
         //need to change search query
-        final String string = "SELECT {PK} FROM { Cart as c}";
+        final String string = "SELECT {PK} FROM { Cart as c} WHERE {c.creationtime} < SYSDATE - INTERVAL '1' HOUR";
 
         final FlexibleSearchQuery query = new FlexibleSearchQuery(string);
 

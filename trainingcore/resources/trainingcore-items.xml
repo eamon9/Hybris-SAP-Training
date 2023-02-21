@@ -232,6 +232,10 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
+            <itemtype code="AbandonedCartEmailCronJob" extends="CronJob" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.AbandonedCartEmailCronJob">
+            </itemtype>
         </typegroup>
 
 <!-- Intern and Customer-->

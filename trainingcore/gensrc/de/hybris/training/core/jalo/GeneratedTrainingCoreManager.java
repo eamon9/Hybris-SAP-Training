@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 20. febr. 13:19:13               ---
+ * --- Generated at 2023. gada 21. febr. 12:09:56               ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
@@ -18,6 +18,7 @@ import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.training.core.constants.TrainingCoreConstants;
+import de.hybris.training.core.jalo.AbandonedCartEmailCronJob;
 import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
@@ -53,6 +54,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public AbandonedCartEmailCronJob createAbandonedCartEmailCronJob(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.ABANDONEDCARTEMAILCRONJOB );
+			return (AbandonedCartEmailCronJob)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating AbandonedCartEmailCronJob : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public AbandonedCartEmailCronJob createAbandonedCartEmailCronJob(final Map attributeValues)
+	{
+		return createAbandonedCartEmailCronJob( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public AbandonedEmailProcess createAbandonedEmailProcess(final SessionContext ctx, final Map attributeValues)
