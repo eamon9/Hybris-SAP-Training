@@ -14,10 +14,14 @@ public class DefaultMyProductDao extends AbstractItemDao implements MyProductDao
     @Autowired
     private FlexibleSearchService flexibleSearchService;
 
+    //public final String PRODUCT_PCS = "5";
+
     @Override
     public List<ProductModel> getProducts() {
 
-        //final String string = "SELECT {p.PK} FROM {Product AS p}";
+        /*final String string = "SELECT {p.PK} FROM {Product AS p} WHERE" +
+                " EXISTS ({{SELECT * FROM {StockLevel as s} WHERE" +
+                " {s.productCode} = {p.code} AND {s.available} < '" + PRODUCT_PCS + "' }})";*/
 
         final String string = "SELECT {p.PK} FROM {Product AS p} WHERE" +
                 " EXISTS ({{SELECT * FROM {StockLevel as s} WHERE" +

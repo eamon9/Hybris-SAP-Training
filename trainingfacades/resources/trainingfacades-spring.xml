@@ -186,7 +186,10 @@
 	<!-- SKU Beans Task day 5 -->
 	<bean id="skuFacade" class="de.hybris.training.facades.product.impl.MyProductVariantFacadeImpl">
 		<property name="productService" ref="skuService"/>
+		<property name="converter" ref="skuConverter"/>
 	</bean>
+
+	<bean id="skuConverter" class="de.hybris.training.facades.converters.SkuConverter"/>
 
 	<!-- Training Email Context -->
 	<bean id="trainingEmailContext" class="de.hybris.training.facades.process.email.context.TrainingEmailContext"

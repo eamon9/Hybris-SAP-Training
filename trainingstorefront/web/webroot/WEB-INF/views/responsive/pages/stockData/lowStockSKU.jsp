@@ -12,21 +12,18 @@
     body {
         background-color: #e0dbdb;
         font-family: "Arial Black", Helvetica, sans-serif;
-        /*font-size: 16em;*/
         color: #000000;
     }
 </style>
 <title>Low Stock SKU</title>
 <body>
-<h3>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <span style="background-color: #530f5e; color: #ffffff; padding: 0 3px;">List all products</span>
-</h3>
-<h1>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    ${listSize}
-</h1>
-<h2>*** lowStockSKU ***</h2>
+<h2>
+    <span style="background-color: #530f5e; color: #ffffff; padding: 0 3px;">
+        *** lowStockSKU ***
+    </span>
+</h2>
+<h4>List of ${listSize} products and their warehouses, </h4>
+<h4>where the product in warehouse is less than 5 pieces</h4>
 <h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
