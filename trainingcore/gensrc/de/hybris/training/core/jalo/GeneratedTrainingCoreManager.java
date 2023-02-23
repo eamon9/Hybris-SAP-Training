@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 21. febr. 12:09:56               ---
+ * --- Generated at 2023. gada 22. febr. 17:30:25               ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
@@ -23,9 +23,11 @@ import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
+import de.hybris.training.core.jalo.GetOrderDetailsCronJob;
 import de.hybris.training.core.jalo.Interns;
 import de.hybris.training.core.jalo.MyFirstCustomer;
 import de.hybris.training.core.jalo.TrainingOldCartRemovalJob;
+import de.hybris.training.core.jalo.TrainingVideoComponent;
 import de.hybris.training.core.jalo.UnapprovedProductListCronJob;
 import de.hybris.training.core.jalo.custom.AbandonedEmailProcess;
 import de.hybris.training.core.jalo.custom.TrainingEmailProcess;
@@ -212,6 +214,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
+	public GetOrderDetailsCronJob createGetOrderDetailsCronJob(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.GETORDERDETAILSCRONJOB );
+			return (GetOrderDetailsCronJob)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating GetOrderDetailsCronJob : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public GetOrderDetailsCronJob createGetOrderDetailsCronJob(final Map attributeValues)
+	{
+		return createGetOrderDetailsCronJob( getSession().getSessionContext(), attributeValues );
+	}
+	
 	public Interns createInterns(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -340,6 +368,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public TrainingOldCartRemovalJob createTrainingOldCartRemovalJob(final Map attributeValues)
 	{
 		return createTrainingOldCartRemovalJob( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public TrainingVideoComponent createTrainingVideoComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.TRAININGVIDEOCOMPONENT );
+			return (TrainingVideoComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TrainingVideoComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public TrainingVideoComponent createTrainingVideoComponent(final Map attributeValues)
+	{
+		return createTrainingVideoComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public UnapprovedProductListCronJob createUnapprovedProductListCronJob(final SessionContext ctx, final Map attributeValues)
