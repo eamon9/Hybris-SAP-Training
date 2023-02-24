@@ -17,6 +17,7 @@ import de.hybris.platform.acceleratorcms.model.components.SubCategoryListCompone
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
 import de.hybris.training.core.model.CustomOffersComponentModel;
+import de.hybris.training.core.model.TrainingVideoComponentModel;
 
 
 /**
@@ -59,6 +60,8 @@ public interface ControllerConstants
 
 			// by javainsimpleway tutorial
 			String CustomOffersComponent = _Prefix + CustomOffersComponentModel._TYPECODE + _Suffix;
+
+			String TrainingVideoCmsComponent = _Prefix + TrainingVideoComponentModel._TYPECODE + _Suffix;
 		}
 	}
 

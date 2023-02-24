@@ -19,17 +19,6 @@ public class MyProductVariantFacadeImpl implements MyProductVariantFacade {
     @Override
     public List<TrainingSkuData> getSkuData() {
         List<ProductModel> productModelList = productService.getProducts();
-        /*TrainingSkuData data = new TrainingSkuData();
-        List<TrainingSkuData> dataList = new ArrayList<>();
-        for (int i = 0; i < productModelList.size(); i++) {
-            ProductModel productModel = productModelList.get(i);
-            data.setDescription(productModel.getDescription());
-            data.setName(productModel.getName());
-            data.setStatus(String.valueOf(productModel.getApprovalStatus()));
-            data.setWarehouses(Collections.singletonList(productModel.getUnitOfMeasure()));
-            dataList.add(data);
-        }
-        return dataList;*/
         return Converters.convertAll(productModelList, converter);
     }
 

@@ -666,4 +666,9 @@
 	<bean id="testOrderDAO" class="de.hybris.training.core.dao.impl.TestOrderDAOImpl">
 	</bean>
 
+	<bean id="trainingProductReviewCountProvider"
+		  class="de.hybris.training.core.search.solrfacetsearch.provider.impl.TrainingProductReviewCountProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 </beans>

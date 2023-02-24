@@ -197,4 +197,10 @@
 
 	</bean>
 
+	<alias name="trainingSearchResultVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>
+	<bean id="trainingSearchResultVariantProductPopulator"
+		  class="de.hybris.training.facades.populators.TrainingSearchResultVariantProductPopulator"
+		  parent="variantCommerceSearchResultProductPopulator">
+	</bean>
+
 </beans>
