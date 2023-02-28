@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="de.hybris.training.facades.product.data.TrainingSkuData" %><%--
   Created by IntelliJ IDEA.
   User: imants.brokans
   Date: 15.02.2023
@@ -36,5 +37,25 @@
 </c:forEach>
 
 <h4>(((( END ))))</h4>
+
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%--<%
+        List<TrainingSkuData> skuData = (List<TrainingSkuData>) request.getAttribute("name");
+        for (TrainingSkuData ignored : skuData) {
+    %>--%>
+    <tr>
+        <%--<td>${products}></td>
+        <td>${name} ></td>--%>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

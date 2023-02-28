@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 24. febr. 11:10:17               ---
+ * --- Generated at 2023. gada 27. febr. 12:22:59               ---
  * ----------------------------------------------------------------
  */
 package org.trainingbackoffice.constants;

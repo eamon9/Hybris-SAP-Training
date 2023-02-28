@@ -23,6 +23,12 @@
 					<cockpit code="NavigationBar" />
 				</td>
 			</tr>
+			#* My own edit "structureViewSection" *#
+			<tr>
+				<td colspan="5" class="structureViewSection">
+					<cockpit code="welcomeInfo" />
+				</td>
+			</tr>
 			<tr>
 				<td colspan="5" class="structureViewSection">
 					<cockpit code="BottomHeaderSlot"/>
