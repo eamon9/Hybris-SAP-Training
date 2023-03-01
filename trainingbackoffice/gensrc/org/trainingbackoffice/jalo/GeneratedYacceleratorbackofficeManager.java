@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 27. febr. 12:22:59               ---
+ * --- Generated at 2023. gada 1. marts 14:22:15                ---
  * ----------------------------------------------------------------
  */
 package org.trainingbackoffice.jalo;

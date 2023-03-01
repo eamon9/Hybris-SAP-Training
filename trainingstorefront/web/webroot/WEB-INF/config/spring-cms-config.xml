@@ -44,7 +44,7 @@
 		<property name="renderers">
 			<map merge="true">
 				<entry key="CMSLinkComponent" value-ref="cmsLinkComponentRenderer"/>
-				<entry key="ImageMapComponent" value-ref="imageMapComponentRenderer"/>
+				<!--<entry key="ImageMapComponent" value-ref="imageMapComponentRenderer"/>-->
 			</map>
 		</property>
 	</bean>
