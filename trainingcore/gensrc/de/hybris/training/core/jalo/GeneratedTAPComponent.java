@@ -21,23 +21,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Generated class for type {@link de.hybris.training.core.jalo.TextAndPicComponent TextAndPicComponent}.
+ * Generated class for type {@link de.hybris.training.core.jalo.TAPComponent TAPComponent}.
  */
 @SuppressWarnings({"deprecation","unused","cast"})
-public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
+public abstract class GeneratedTAPComponent extends SimpleCMSComponent
 {
-	/** Qualifier of the <code>TextAndPicComponent.productName</code> attribute **/
+	/** Qualifier of the <code>TAPComponent.productName</code> attribute **/
 	public static final String PRODUCTNAME = "productName";
-	/** Qualifier of the <code>TextAndPicComponent.brand</code> attribute **/
-	public static final String BRAND = "brand";
-	/** Qualifier of the <code>TextAndPicComponent.productImage</code> attribute **/
+	/** Qualifier of the <code>TAPComponent.brandName</code> attribute **/
+	public static final String BRANDNAME = "brandName";
+	/** Qualifier of the <code>TAPComponent.productImage</code> attribute **/
 	public static final String PRODUCTIMAGE = "productImage";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>(SimpleCMSComponent.DEFAULT_INITIAL_ATTRIBUTES);
 		tmp.put(PRODUCTNAME, AttributeMode.INITIAL);
-		tmp.put(BRAND, AttributeMode.INITIAL);
+		tmp.put(BRANDNAME, AttributeMode.INITIAL);
 		tmp.put(PRODUCTIMAGE, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
@@ -48,50 +48,50 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.brand</code> attribute.
-	 * @return the brand
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.brandName</code> attribute.
+	 * @return the brandName
 	 */
-	public String getBrand(final SessionContext ctx)
+	public String getBrandName(final SessionContext ctx)
 	{
 		if( ctx == null || ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedTextAndPicComponent.getBrand requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedTAPComponent.getBrandName requires a session language", 0 );
 		}
-		return (String)getLocalizedProperty( ctx, BRAND);
+		return (String)getLocalizedProperty( ctx, BRANDNAME);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.brand</code> attribute.
-	 * @return the brand
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.brandName</code> attribute.
+	 * @return the brandName
 	 */
-	public String getBrand()
+	public String getBrandName()
 	{
-		return getBrand( getSession().getSessionContext() );
+		return getBrandName( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @return the localized brand
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @return the localized brandName
 	 */
-	public Map<Language,String> getAllBrand(final SessionContext ctx)
+	public Map<Language,String> getAllBrandName(final SessionContext ctx)
 	{
-		return (Map<Language,String>)getAllLocalizedProperties(ctx,BRAND,C2LManager.getInstance().getAllLanguages());
+		return (Map<Language,String>)getAllLocalizedProperties(ctx,BRANDNAME,C2LManager.getInstance().getAllLanguages());
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @return the localized brand
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @return the localized brandName
 	 */
-	public Map<Language,String> getAllBrand()
+	public Map<Language,String> getAllBrandName()
 	{
-		return getAllBrand( getSession().getSessionContext() );
+		return getAllBrandName( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @param value the brand
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @param value the brandName
 	 */
-	public void setBrand(final SessionContext ctx, final String value)
+	public void setBrandName(final SessionContext ctx, final String value)
 	{
 		if ( ctx == null) 
 		{
@@ -99,40 +99,40 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 		}
 		if( ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedTextAndPicComponent.setBrand requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedTAPComponent.setBrandName requires a session language", 0 );
 		}
-		setLocalizedProperty(ctx, BRAND,value);
+		setLocalizedProperty(ctx, BRANDNAME,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @param value the brand
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @param value the brandName
 	 */
-	public void setBrand(final String value)
+	public void setBrandName(final String value)
 	{
-		setBrand( getSession().getSessionContext(), value );
+		setBrandName( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @param value the brand
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @param value the brandName
 	 */
-	public void setAllBrand(final SessionContext ctx, final Map<Language,String> value)
+	public void setAllBrandName(final SessionContext ctx, final Map<Language,String> value)
 	{
-		setAllLocalizedProperties(ctx,BRAND,value);
+		setAllLocalizedProperties(ctx,BRANDNAME,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.brand</code> attribute. 
-	 * @param value the brand
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.brandName</code> attribute. 
+	 * @param value the brandName
 	 */
-	public void setAllBrand(final Map<Language,String> value)
+	public void setAllBrandName(final Map<Language,String> value)
 	{
-		setAllBrand( getSession().getSessionContext(), value );
+		setAllBrandName( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productImage</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productImage</code> attribute.
 	 * @return the productImage
 	 */
 	public Media getProductImage(final SessionContext ctx)
@@ -141,7 +141,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productImage</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productImage</code> attribute.
 	 * @return the productImage
 	 */
 	public Media getProductImage()
@@ -150,7 +150,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productImage</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productImage</code> attribute. 
 	 * @param value the productImage
 	 */
 	public void setProductImage(final SessionContext ctx, final Media value)
@@ -159,7 +159,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productImage</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productImage</code> attribute. 
 	 * @param value the productImage
 	 */
 	public void setProductImage(final Media value)
@@ -168,20 +168,20 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productName</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productName</code> attribute.
 	 * @return the productName
 	 */
 	public String getProductName(final SessionContext ctx)
 	{
 		if( ctx == null || ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedTextAndPicComponent.getProductName requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedTAPComponent.getProductName requires a session language", 0 );
 		}
 		return (String)getLocalizedProperty( ctx, PRODUCTNAME);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productName</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productName</code> attribute.
 	 * @return the productName
 	 */
 	public String getProductName()
@@ -190,7 +190,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productName</code> attribute. 
 	 * @return the localized productName
 	 */
 	public Map<Language,String> getAllProductName(final SessionContext ctx)
@@ -199,7 +199,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>TAPComponent.productName</code> attribute. 
 	 * @return the localized productName
 	 */
 	public Map<Language,String> getAllProductName()
@@ -208,7 +208,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productName</code> attribute. 
 	 * @param value the productName
 	 */
 	public void setProductName(final SessionContext ctx, final String value)
@@ -219,13 +219,13 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 		}
 		if( ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedTextAndPicComponent.setProductName requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedTAPComponent.setProductName requires a session language", 0 );
 		}
 		setLocalizedProperty(ctx, PRODUCTNAME,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productName</code> attribute. 
 	 * @param value the productName
 	 */
 	public void setProductName(final String value)
@@ -234,7 +234,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productName</code> attribute. 
 	 * @param value the productName
 	 */
 	public void setAllProductName(final SessionContext ctx, final Map<Language,String> value)
@@ -243,7 +243,7 @@ public abstract class GeneratedTextAndPicComponent extends SimpleCMSComponent
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>TextAndPicComponent.productName</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TAPComponent.productName</code> attribute. 
 	 * @param value the productName
 	 */
 	public void setAllProductName(final Map<Language,String> value)

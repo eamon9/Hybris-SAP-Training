@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 1. marts 14:22:15                ---
+ * --- Generated at 2023. gada 2. marts 12:34:42                ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
@@ -27,6 +27,7 @@ import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.GetOrderDetailsCronJob;
 import de.hybris.training.core.jalo.Interns;
 import de.hybris.training.core.jalo.MyFirstCustomer;
+import de.hybris.training.core.jalo.TAPComponent;
 import de.hybris.training.core.jalo.TextAndPicComponent;
 import de.hybris.training.core.jalo.TrainingOldCartRemovalJob;
 import de.hybris.training.core.jalo.TrainingVideoComponent;
@@ -344,6 +345,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ProductsRemovalCronJob createProductsRemovalCronJob(final Map attributeValues)
 	{
 		return createProductsRemovalCronJob( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public TAPComponent createTAPComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.TAPCOMPONENT );
+			return (TAPComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TAPComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public TAPComponent createTAPComponent(final Map attributeValues)
+	{
+		return createTAPComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public TextAndPicComponent createTextAndPicComponent(final SessionContext ctx, final Map attributeValues)

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2023. gada 1. marts 14:22:15                ---
+ * --- Generated at 2023. gada 2. marts 12:34:42                ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
@@ -30,6 +30,7 @@ public class GeneratedTrainingCoreConstants
 		public static final String MYFIRSTCUSTOMER = "MyFirstCustomer".intern();
 		public static final String PRODUCTSREMOVALCRONJOB = "ProductsRemovalCronJob".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
+		public static final String TAPCOMPONENT = "TAPComponent".intern();
 		public static final String TEXTANDPICCOMPONENT = "TextAndPicComponent".intern();
 		public static final String TRAININGEMAILPROCESS = "TrainingEmailProcess".intern();
 		public static final String TRAININGOLDCARTREMOVALJOB = "TrainingOldCartRemovalJob".intern();

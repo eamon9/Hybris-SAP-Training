@@ -17,6 +17,7 @@ import de.hybris.platform.acceleratorcms.model.components.SubCategoryListCompone
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
 import de.hybris.training.core.model.CustomOffersComponentModel;
+import de.hybris.training.core.model.TAPComponentModel;
 import de.hybris.training.core.model.TextAndPicComponentModel;
 import de.hybris.training.core.model.TrainingVideoComponentModel;
 
@@ -67,6 +68,8 @@ public interface ControllerConstants
 			// by tutorial https://hybrisinstructive.blogspot.com/2018/12/custom-component-in-hybris.html
 
 			String TextAndPicComponent = _Prefix + TextAndPicComponentModel._TYPECODE + _Suffix;
+
+			String TAPComponent = _Prefix + TAPComponentModel._TYPECODE + _Suffix;
 		}
 	}
 
