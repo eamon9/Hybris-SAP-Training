@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <cms:pageSlot position="TextAndPicSlotName" var="feature" >
+    <cms:pageSlot position="TrainingSlotName" var="feature" >
         <cms:component component="${feature}" />
     </cms:pageSlot>
 

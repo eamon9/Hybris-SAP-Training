@@ -305,11 +305,7 @@
                 </attributes>
             </itemtype>
 
-
-        <!--  newly added by tutorial https://hybrisinstructive.blogspot.com/2018/12/custom-component-in-hybris.html  -->
-        </typegroup>
-
-        <typegroup name="TextAndPicInstructive">
+            <!--  newly added by tutorial https://hybrisinstructive.blogspot.com/2018/12/custom-component-in-hybris.html  -->
             <itemtype code="TextAndPicComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
                       jaloclass="de.hybris.training.core.jalo.TextAndPicComponent">
                 <attributes>
@@ -327,11 +323,28 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
+            <!-- My newly form -->
+
+            <itemtype code="TAPComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+                      jaloclass="de.hybris.training.core.jalo.TAPComponent">
+                <attributes>
+                    <attribute type="localized:java.lang.String" qualifier="productName">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="localized:java.lang.String" qualifier="brandName">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="Media" qualifier="productImage">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
         </typegroup>
-
-
-<!-- Intern and Customer-->
-
 
     </itemtypes>
 </items>
