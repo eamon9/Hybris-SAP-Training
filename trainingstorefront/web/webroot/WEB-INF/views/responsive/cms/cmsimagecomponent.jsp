@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: imants.brokans
-  Date: 24.02.2023
-  Time: 08:46
+  Date: 02.03.2023
+  Time: 19:32
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page trimDirectiveWhitespaces="true" %>
@@ -18,7 +18,4 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="breadcrumb" tagdir="/WEB-INF/tags/responsive/nav/breadcrumb" %>
 
-
-<p>${brandName}</p>
 <img alt="Product Image" src="${productImage.url}" >
-<p>${productName}</p>

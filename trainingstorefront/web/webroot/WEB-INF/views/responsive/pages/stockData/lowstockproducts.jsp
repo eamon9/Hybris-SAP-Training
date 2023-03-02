@@ -20,12 +20,26 @@
     <title>Low Stock SKU</title>
 </head>
 <body>
-<table>
+<h2>
+    <span style="background-color: #530f5e; color: #ffffff; padding: 0 3px;">
+        *** lowStockSKU ***
+    </span>
+</h2>
+<h4>List of ${listSize} products and their warehouses, </h4>
+<h4>where the product in warehouse is less than 5 pieces</h4>
+<h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <img src="https://htmlcodeeditor.com/images/smiley.png" alt="smiley" />
+</h6>
+<table border="1">
     <thead>
     <tr>
         <th>Code</th>
         <th>Name</th>
-        <th>Stock Level</th>
+        <th>Approval Status</th>
+        <th>Warehouse</th>
     </tr>
     </thead>
     <tbody>
@@ -33,7 +47,8 @@
         <tr>
             <td>${product.code}</td>
             <td>${product.name}</td>
-            <td>${product.stockLevel}</td>
+            <%--<td>${product.Warehouse}</td>--%>
+            <td>${product.approvalStatus}</td>
         </tr>
     </c:forEach>
     </tbody>
