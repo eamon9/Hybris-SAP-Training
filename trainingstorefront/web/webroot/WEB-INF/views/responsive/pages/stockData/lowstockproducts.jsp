@@ -40,17 +40,24 @@
         <th>Name</th>
         <th>Approval Status</th>
         <th>Warehouse</th>
-    </tr>
+    <tr>
+
     </thead>
     <tbody>
     <c:forEach var="product" items="${products}">
         <tr>
             <td>${product.code}</td>
             <td>${product.name}</td>
-            <%--<td>${product.Warehouse}</td>--%>
             <td>${product.approvalStatus}</td>
+            <%--<c:forEach var="WHouseID" items="${WHouseID}">
+                <td>${WHouseID}</td>
+            </c:forEach>--%>
+            <td>${productW.code}</td>
         </tr>
     </c:forEach>
+    <%--<c:forEach var="WHouseID" items="${WHouseID}">
+
+    </c:forEach>--%>
     </tbody>
 </table>
 

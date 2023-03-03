@@ -34,9 +34,13 @@ public class LowStockProductsController extends AbstractPageController
     public String showLowStockProducts(Model model)
     {
 
-        String query = "SELECT {p.PK} FROM {Product AS p} WHERE" +
+        /*String query = "SELECT {p.PK} FROM {Product AS p} WHERE" +
                 " EXISTS ({{SELECT * FROM {StockLevel as s} WHERE" +
-                " {s.productCode} = {p.code} AND {s.available} < '5' }})";
+                " {s.productCode} = {p.code} AND {s.available} < '5' }})";*/
+
+        String query = "SELECT {p.PK} \n" +
+                "FROM {Product AS p JOIN StockLevel AS s ON {s.productCode} = {p.code} JOIN " +
+                "Warehouse AS w ON {s.warehouse} = {w.PK}} WHERE {s.productCode} = {p.code} AND {s.available} < '5'";
 
         FlexibleSearchQuery fsQuery = new FlexibleSearchQuery(query);
 
@@ -46,23 +50,42 @@ public class LowStockProductsController extends AbstractPageController
 
         model.addAttribute("products", products);
 
-        //model.addAttribute("listSize", products.size());
-
 
         //-------------------------------------------------------
+
+        String queryForW = "SELECT {p.PK} \n" +
+                "FROM {Product AS p JOIN StockLevel AS s ON {s.productCode} = {p.code} JOIN " +
+                "Warehouse AS w ON {s.warehouse} = {w.PK}} WHERE {s.productCode} = {p.code} AND {s.available} < '5'";
+
+        FlexibleSearchQuery fsQueryW = new FlexibleSearchQuery(queryForW);
+
+        SearchResult<ProductModel> resultW = flexibleSearchService.search(fsQueryW);
+
+        List<ProductModel> productsW = resultW.getResult();
+
+        model.addAttribute("productsW", productsW);
+
+
         List<TrainingSkuData> skuDataList = myProductFacade.getSkuData();
-        model.addAttribute("listSize", skuDataList.size());
+        model.addAttribute("listSize", productsW.size());
         List<String> products1 = new ArrayList<String>();
 
         for (int i = 0; i < skuDataList.size(); i++) {
             TrainingSkuData skuData = skuDataList.get(i);
-            products1.add("Product name: " + skuData.getName() + "\nStatus: " + skuData.getStatus());
             List<String> warehouseList = skuData.getWarehouses();
             for (int j = 0; j < warehouseList.size(); j++) {
                 String warehouse = warehouseList.get(j);
-                model.addAttribute("W_house ID: '" + warehouse + "'");
+                products1.add("WHouseID:" + warehouse);
             }
         }
+
+        for (int i = 0; i < products1.size(); i++) {
+            String element =  products1.get(i);
+            int index = element.lastIndexOf(":");
+            products1.set(i, element.toString().substring(index + 1));
+        }
+
+        model.addAttribute("WHouseID", products1);
 
         //--------------------------------------------------------------
 
